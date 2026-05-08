@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+ <link rel="stylesheet" href="style.css" type="text/css"/>
+ <script src="main.js"></script>
+</head>
+
+<body>
+
+
+<p> </p>
+<br>
+<div class="div_background"></div>
+
+<br><br>
+
+<img class="circle" id="ball" draggable="true" >
+
+<div class="bubbles bubble-1"></div>
+<div class="bubbles bubble-5"></div>
+<div class="bubbles bubble-2"></div>
+<div class="bubbles bubble-6"></div>
+<div class="bubbles bubble-3"></div>
+<div class="bubbles bubble-7"></div>
+<div class="bubbles bubble-4"></div>
+<div class="bubbles bubble-8"></div>
+
+<div id="fishId" class="fish">
+  <div class="fish-body">
+    <div class="eye">
+      <div class="pupil"></div>
+    </div>
+  </div>
+  <div class="fin"></div>
+  <div class="fin fin-bottom"></div>
+</div>
+
+
+<!-- /div -->
+
+</body>
+</html>
