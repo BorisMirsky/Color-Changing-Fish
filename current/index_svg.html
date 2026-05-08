@@ -67,7 +67,7 @@
             position: relative;
         }
 
-        /* ПОПЫТКА №2: дырки побольше и почаще */
+        /* Круг с дырками через SVG */
         .holey-ball {
             position: absolute;
             width: 130px;
@@ -77,32 +77,15 @@
             z-index: 10;
             top: 120px;
             left: 280px;
-
+            
+            /* SVG с дырками в качестве фона */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='3.5' fill='transparent'/%3E%3C/svg%3E");
             background-color: #DCDCDC;
+            background-repeat: repeat;
+            background-size: 20px 20px;
             
-            background-image: 
-                /* Слой 1: дырка 3px, шаг 16px */
-                repeating-radial-gradient(
-                    circle at 20% 40%,
-                    transparent 0px,
-                    transparent 3px,
-                    #DCDCDC 3px,
-                    #DCDCDC 16px
-                ),
-                /* Слой 2: смещённые дырки, чтобы не было строгой решётки */
-                repeating-radial-gradient(
-                    circle at 65% 75%,
-                    transparent 0px,
-                    transparent 2.8px,
-                    #DCDCDC 2.8px,
-                    #DCDCDC 15px
-                );
-            
-            background-repeat: repeat, repeat;
-            background-blend-mode: normal, normal;
-            
-            mask: radial-gradient(circle at 50% 50%, black 100%, transparent 100%);
-            -webkit-mask: radial-gradient(circle at 50% 50%, black 100%, transparent 100%);
+            /* Дырки прозрачные, сквозь них видно то, что ПОД кругом */
+            background-blend-mode: normal;
         }
 
         .holey-ball:active {
@@ -138,13 +121,13 @@
 <div>
     <div class="demo-container">
         <div class="striped-bg">
-            <img id="holeyBall" class="holey-ball" draggable="false" alt="drag me">
+            <img id="holeyBall" class="holey-ball" draggable="false">
         </div>
     </div>
     <div class="info">
-        🔘 Дырки 3px, шаг 15–16px<br>
-        🖱️ Перетащи — фон должен быть заметен, но не доминировать
-        <div class="note">⚙️ Попытка №2: дырки заметные, но не огромные</div>
+        🔘 Дырки через SVG — прозрачные круги радиусом 3.5px, шаг 20px<br>
+        🖱️ Перетащи — фон виден сквозь каждую дырку
+        <div class="note">⚙️ Попытка №3: SVG-паттерн вместо градиентов</div>
     </div>
 </div>
 

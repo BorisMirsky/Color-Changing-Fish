@@ -67,7 +67,7 @@
             position: relative;
         }
 
-        /* ПОПЫТКА №2: дырки побольше и почаще */
+        /* Круг — теперь div, а не img */
         .holey-ball {
             position: absolute;
             width: 130px;
@@ -77,32 +77,69 @@
             z-index: 10;
             top: 120px;
             left: 280px;
-
+            
+            /* Серый цвет круга */
             background-color: #DCDCDC;
             
-            background-image: 
-                /* Слой 1: дырка 3px, шаг 16px */
-                repeating-radial-gradient(
-                    circle at 20% 40%,
-                    transparent 0px,
-                    transparent 3px,
-                    #DCDCDC 3px,
-                    #DCDCDC 16px
-                ),
-                /* Слой 2: смещённые дырки, чтобы не было строгой решётки */
-                repeating-radial-gradient(
-                    circle at 65% 75%,
-                    transparent 0px,
-                    transparent 2.8px,
-                    #DCDCDC 2.8px,
-                    #DCDCDC 15px
-                );
+            /* Дырки создаём через mask с точечным узором */
+            mask-image: radial-gradient(circle at 20% 30%, black 2px, transparent 2px),
+                        radial-gradient(circle at 50% 70%, black 2px, transparent 2px),
+                        radial-gradient(circle at 80% 20%, black 2px, transparent 2px),
+                        radial-gradient(circle at 35% 85%, black 2px, transparent 2px),
+                        radial-gradient(circle at 65% 45%, black 2px, transparent 2px),
+                        radial-gradient(circle at 10% 60%, black 2px, transparent 2px),
+                        radial-gradient(circle at 90% 80%, black 2px, transparent 2px),
+                        radial-gradient(circle at 45% 15%, black 2px, transparent 2px),
+                        radial-gradient(circle at 75% 90%, black 2px, transparent 2px),
+                        radial-gradient(circle at 25% 50%, black 2px, transparent 2px),
+                        radial-gradient(circle at 55% 25%, black 2px, transparent 2px),
+                        radial-gradient(circle at 15% 75%, black 2px, transparent 2px),
+                        radial-gradient(circle at 85% 55%, black 2px, transparent 2px),
+                        radial-gradient(circle at 40% 40%, black 2px, transparent 2px),
+                        radial-gradient(circle at 70% 10%, black 2px, transparent 2px),
+                        radial-gradient(circle at 5% 20%, black 2px, transparent 2px),
+                        radial-gradient(circle at 95% 40%, black 2px, transparent 2px),
+                        radial-gradient(circle at 60% 95%, black 2px, transparent 2px);
             
-            background-repeat: repeat, repeat;
-            background-blend-mode: normal, normal;
+            mask-size: 30px 30px, 28px 28px, 32px 32px, 26px 26px, 34px 34px,
+                       29px 29px, 31px 31px, 27px 27px, 33px 33px, 30px 30px,
+                       28px 28px, 32px 32px, 26px 26px, 35px 35px, 29px 29px,
+                       30px 30px, 28px 28px, 31px 31px;
             
-            mask: radial-gradient(circle at 50% 50%, black 100%, transparent 100%);
-            -webkit-mask: radial-gradient(circle at 50% 50%, black 100%, transparent 100%);
+            mask-repeat: repeat, repeat, repeat, repeat, repeat,
+                         repeat, repeat, repeat, repeat, repeat,
+                         repeat, repeat, repeat, repeat, repeat,
+                         repeat, repeat, repeat;
+            
+            mask-composite: exclude;
+            -webkit-mask-image: radial-gradient(circle at 20% 30%, black 2px, transparent 2px),
+                                radial-gradient(circle at 50% 70%, black 2px, transparent 2px),
+                                radial-gradient(circle at 80% 20%, black 2px, transparent 2px),
+                                radial-gradient(circle at 35% 85%, black 2px, transparent 2px),
+                                radial-gradient(circle at 65% 45%, black 2px, transparent 2px),
+                                radial-gradient(circle at 10% 60%, black 2px, transparent 2px),
+                                radial-gradient(circle at 90% 80%, black 2px, transparent 2px),
+                                radial-gradient(circle at 45% 15%, black 2px, transparent 2px),
+                                radial-gradient(circle at 75% 90%, black 2px, transparent 2px),
+                                radial-gradient(circle at 25% 50%, black 2px, transparent 2px),
+                                radial-gradient(circle at 55% 25%, black 2px, transparent 2px),
+                                radial-gradient(circle at 15% 75%, black 2px, transparent 2px),
+                                radial-gradient(circle at 85% 55%, black 2px, transparent 2px),
+                                radial-gradient(circle at 40% 40%, black 2px, transparent 2px),
+                                radial-gradient(circle at 70% 10%, black 2px, transparent 2px),
+                                radial-gradient(circle at 5% 20%, black 2px, transparent 2px),
+                                radial-gradient(circle at 95% 40%, black 2px, transparent 2px),
+                                radial-gradient(circle at 60% 95%, black 2px, transparent 2px);
+            
+            -webkit-mask-size: 30px 30px, 28px 28px, 32px 32px, 26px 26px, 34px 34px,
+                               29px 29px, 31px 31px, 27px 27px, 33px 33px, 30px 30px,
+                               28px 28px, 32px 32px, 26px 26px, 35px 35px, 29px 29px,
+                               30px 30px, 28px 28px, 31px 31px;
+            
+            -webkit-mask-repeat: repeat, repeat, repeat, repeat, repeat,
+                                 repeat, repeat, repeat, repeat, repeat,
+                                 repeat, repeat, repeat, repeat, repeat,
+                                 repeat, repeat, repeat;
         }
 
         .holey-ball:active {
@@ -138,13 +175,13 @@
 <div>
     <div class="demo-container">
         <div class="striped-bg">
-            <img id="holeyBall" class="holey-ball" draggable="false" alt="drag me">
+            <div id="holeyBall" class="holey-ball"></div>
         </div>
     </div>
     <div class="info">
-        🔘 Дырки 3px, шаг 15–16px<br>
-        🖱️ Перетащи — фон должен быть заметен, но не доминировать
-        <div class="note">⚙️ Попытка №2: дырки заметные, но не огромные</div>
+        🔘 Круг из div с дырками через CSS mask<br>
+        🖱️ Дырки — чёрные точки в маске, их много (18 слоёв с разным смещением)
+        <div class="note">⚙️ Попытка №4: mask-image с точечным узором</div>
     </div>
 </div>
 
