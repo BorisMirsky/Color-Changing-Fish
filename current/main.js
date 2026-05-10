@@ -9,18 +9,19 @@ window.onload = function(){
 	// Массив широких полос
 	var colorStripes = [
 		{ start: 0, color: '#00B8D4' },
-		{ start: 100, color: '#D50000' },
-		{ start: 200, color: '#C51162' },
-		{ start: 300, color: '#AA00FF' },
-		{ start: 400, color: '#6200EA' },
-		{ start: 500, color: '#304FFE' },
-		{ start: 600, color: '#2962FF' },
-		{ start: 700, color: '#0091EA' },
-		{ start: 800, color: '#00BFA5' },
-		{ start: 900, color: '#00C853' },
-		{ start: 1000, color: '#64DD17' },
-		{ start: 1100, color: '#AEEA00' }
+		{ start: 150, color: '#D50000' },
+		{ start: 300, color: '#C51162' },
+		{ start: 450, color: '#AA00FF' },
+		{ start: 600, color: '#6200EA' },
+		{ start: 750, color: '#304FFE' },
+		{ start: 900, color: '#2962FF' },
+		{ start: 1050, color: '#0091EA' },
+		{ start: 1200, color: '#00BFA5' },
+		{ start: 1350, color: '#00C853' },
+		{ start: 1500, color: '#64DD17' },
+		{ start: 1650, color: '#AEEA00' }
 	];
+	
 	
 	function getColorAtX(relativeX) {
 		for (var i = colorStripes.length - 1; i >= 0; i--) {

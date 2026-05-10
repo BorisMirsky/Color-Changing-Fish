@@ -59,7 +59,7 @@
 }
 
 /* Fish — исходная форма как в первом файле */
-.fish {
+/* .fish {
   position: absolute;
   cursor: grab;
   z-index: 10;
@@ -69,7 +69,7 @@
 
 .fish:active {
   cursor: grabbing;
-}
+} */
 
 .fish-body {
   position: relative;
@@ -80,7 +80,6 @@
   width: 150px; 
   height: 100px;
 }
-
 
 .fin {
   margin-top: -100px; 
@@ -95,41 +94,6 @@
   margin-top: -10px;
   transform: rotate(-40deg);
 }
-
-/* Background stripes — широкие полосы (100px каждая) */
-.div_background {
-  height: 600px; 
-  width: 1200px; 
-  border: 5px solid black;
-  background: linear-gradient(
-    135deg,
-    #00B8D4 0px,
-    #00B8D4 100px,
-    #D50000 100px,
-    #D50000 200px,
-    #C51162 200px,
-    #C51162 300px,
-    #AA00FF 300px,
-    #AA00FF 400px,
-    #6200EA 400px,
-    #6200EA 500px,
-    #304FFE 500px,
-    #304FFE 600px,
-    #2962FF 600px,
-    #2962FF 700px,
-    #0091EA 700px,
-    #0091EA 800px,
-    #00BFA5 800px,
-    #00BFA5 900px,
-    #00C853 900px,
-    #00C853 1000px,
-    #64DD17 1000px,
-    #64DD17 1100px,
-    #AEEA00 1100px,
-    #AEEA00 1200px
-  );
-}
-
 
 /* Eye */
 .eye {
@@ -153,3 +117,39 @@
   height: 10px;
   width: 10px;
 }
+
+/* Background stripes — широкие полосы (100px каждая) */
+.div_background {
+  height: 600px; 
+  width: 2000px; 
+  border: 5px solid black;
+  background: linear-gradient(
+    135deg,
+    #00B8D4 0px,
+    #00B8D4 150px,
+    #D50000 150px,
+    #D50000 300px,
+    #C51162 300px,
+    #C51162 450px,
+    #AA00FF 450px,
+    #AA00FF 600px,
+    #6200EA 600px,
+    #6200EA 750px,
+    #304FFE 750px,
+    #304FFE 900px,
+    #2962FF 900px,
+    #2962FF 1050px,
+    #0091EA 1050px,
+    #0091EA 1200px,
+    #00BFA5 1200px,
+    #00BFA5 1350px,
+    #00C853 1350px,
+    #00C853 1500px,
+    #64DD17 1500px,
+    #64DD17 1650px,
+    #AEEA00 1650px,
+    #AEEA00 1800px
+  );
+}
+
+
